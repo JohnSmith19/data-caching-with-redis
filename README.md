@@ -154,7 +154,7 @@ test("Adds tow numbers", () => {
 
 ### Launching Chromium Instances
 
-- [Puppeteer](https://developers.google.com/web/tools/puppeteer/)
+- [Puppeteer](https://github.com/GoogleChrome/puppeteer)
 
 ```js
 const puppeteer = require("puppeteer");
@@ -189,3 +189,7 @@ afterEach(async () => {
   await browser.close();
 });
 ```
+
+### Asserting OAuthFlow
+
+- [page.url()](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageurl)
