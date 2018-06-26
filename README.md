@@ -91,3 +91,9 @@ client.get("color", console.log); // => null null
 ### [Unique Keys](https://github.com/JohnSmith19/data-caching-with-redis/commit/75812eea778e7ac7485393bd3a5ad77f86f7f179#diff-28fc543f349200516a8ad8a17ffcab9e)
 
 ### [Key Creation]()
+
+### [Restoring Redis Config]()
+
+### [Resolving Values]()
+
+### [Hydrating Models]()
