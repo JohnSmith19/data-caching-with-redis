@@ -105,3 +105,5 @@ client.get("color", console.log); // => null null
 ### [Cache Expiration]()
 
 ### [Nested Hashes]()
+
+### [Clearing Nested Hashes]()
