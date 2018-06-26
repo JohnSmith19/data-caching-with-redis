@@ -4,8 +4,6 @@ This project was bootstrapped with [AdvancedNodeStarter](https://github.com/Step
 
 Starting project for a course on Advanced Node @ Udemy
 
-## Project Setup
-
 ### Redis
 
 - [About Redis](https://redis.io/)
@@ -80,6 +78,8 @@ client.set("color", "red", "EX", 5000 /*number of ms*/);
 client.get("color", console.log); // => null null
 ```
 
+### [Project Setup](https://github.com/JohnSmith19/data-caching-with-redis/commit/ec1fc246cb4a200f6fbb3fb4c16906a795c4ac63)
+
 ### [Promisifying a Function](https://github.com/JohnSmith19/data-caching-with-redis/commit/6719fd842421f5eefe80f12f5fc6de63ed327a01)
 
 ### [Caching in Action](https://github.com/JohnSmith19/data-caching-with-redis/commit/bd6c43dff49d3708ce5323184f5dd4591db681d5#diff-853bab5e1a5197366bfd8d750c69e150)
@@ -99,3 +99,5 @@ client.get("color", console.log); // => null null
 ### [Hydrating Models]()
 
 ### [Hydrating Arrays]()
+
+### [Toggleable Cache]()
