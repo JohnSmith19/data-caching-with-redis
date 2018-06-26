@@ -233,3 +233,14 @@ await page.setCookie({ name: "session", value: sessionString });
 await page.setCookie({ name: "session.sig", value: sig });
 await page.goto("localhost:3000");
 ```
+
+### WaitFor Statements
+
+- [waitFor](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagewaitforselectororfunctionortimeout-options-args)
+
+```js
+await page.waitFor('a[href="/auth/logout"]');
+const text = await page.$eval('a[href="/auth/logout"]', el => el.innerHTML);
+
+expect(text).toEqual("Logout");
+```
