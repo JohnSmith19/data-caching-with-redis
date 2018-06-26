@@ -1,4 +1,6 @@
-# AdvancedNodeStarter
+# Data Caching with Redis
+
+This project was bootstrapped with [AdvancedNodeStarter](https://github.com/StephenGrider/AdvancedNodeStarter)
 
 Starting project for a course on Advanced Node @ Udemy
 
@@ -19,31 +21,67 @@ $ redis-cli ping
 PONG
 ```
 
-### Redis Getting and Setting Basic Values
+### Getting and Setting Basic Values
 
 ```js
-var redis = require("redis"),
-  client = redis.createClient();
+const redis = require("redis");
+const redisUrl = "redis://localhost:6379";
+const client = redis.createClient(redisUrl);
+client.set("hi", "there");
+client.get("hi", (err, value) => console.log(value)); // => 'there'
 
-// if you'd like to select database 3, instead of 0 (default), call
-// client.select(3, function() { /* ... */ });
-
-client.on("error", function(err) {
-  console.log("Error " + err);
-});
-
-client.set("string key", "string val", redis.print);
-client.hset("hash key", "hashtest 1", "some value", redis.print);
-client.hset(["hash key", "hashtest 2", "some other value"], redis.print);
-client.hkeys("hash key", function(err, replies) {
-  console.log(replies.length + " replies:");
-  replies.forEach(function(reply, i) {
-    console.log("    " + i + ": " + reply);
-  });
-  client.quit();
-});
+client.get("hi", console.log); // => null 'there'
 ```
 
-## Promisifying a Function
+### Redis Hashes
 
-## Caching in Action
+```js
+// data structure
+const redisValues = {
+    spanish: {
+        red: 'rojo',
+        orange: 'noranja'
+        blue: 'azul'
+    },
+    german: {
+        red: rot,
+        orange: 'orange',
+        blue: 'blau'
+    }
+};
+
+// hset, hget
+const redis = require("redis");
+const redisUrl = "redis://localhost:6379";
+const client = redis.createClient(redisUrl);
+client.hset('german', 'red', 'rot');
+client.hget('german', 'red', console.log); // => null 'rot'
+client.hset('german', 'blue', 'blau');
+client.hget('german', 'blue', console.log); // => null 'blau'
+```
+
+### JSON Stringify
+
+```js
+clinet.set("colors", { red: "rojo" });
+clinet.get("colors", console.log); // => null, '[object Object]'
+
+// stringfy
+client.set("colors", JSON.stringify({ red: "rojo" }));
+client.get("colors", console.log); // => null, '{"red" : "rojo"}'
+client.get("colors", (err, val) => console.log(JSON.parse(val))); // => { red: 'rojo' }
+```
+
+### Automatic Expiration
+
+```js
+client.set("color", "red", "EX", 5000 /*number of ms*/);
+// after 5s
+client.get("color", console.log); // => null null
+```
+
+## [Promisifying a Function](https://github.com/JohnSmith19/data-caching-with-redis/commit/6719fd842421f5eefe80f12f5fc6de63ed327a01)
+
+## [Caching in Action](https://github.com/JohnSmith19/data-caching-with-redis/commit/bd6c43dff49d3708ce5323184f5dd4591db681d5#diff-853bab5e1a5197366bfd8d750c69e150)
+
+## [Patching Mongoose's Exec]
