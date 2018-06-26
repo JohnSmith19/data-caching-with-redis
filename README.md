@@ -135,9 +135,19 @@ mongoose.Query.prototype.exec = function() {
 
 - [About Jest](http://jestjs.io/docs/en/getting-started.html)
 
-### Commands Around Testing
+- Commands Around Testing
 
 ```bash
-$ npm install --save jest
+$ npm install --save-dev jest
 $ npm run test
+```
+
+- First Jest Test
+
+```js
+test("Adds tow numbers", () => {
+  const sum = 1 + 2;
+
+  expect(sum).toEqual(3);
+});
 ```
