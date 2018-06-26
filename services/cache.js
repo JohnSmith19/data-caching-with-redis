@@ -7,7 +7,7 @@ const client = redis.createClient(redisUrl);
 client.get = util.promisify(client.get);
 const exec = mongoose.Query.prototype.exec;
 
-mongoose.Query.prototype.exec = function() {
+mongoose.Query.prototype.exec = async function() {
   console.log("Im about to run a query");
 
   const key = JSON.stringify(
@@ -16,7 +16,15 @@ mongoose.Query.prototype.exec = function() {
     })
   );
 
-  console.log(key);
+  // See if we have a value of 'key' in redis
+  const cacheValue = await client.get(key);
 
-  return exec.apply(this, arguments);
+  // If we do, return that
+  if (cacheValue) {
+    console.log(cacheValue);
+  }
+
+  // Otherwise, issue the query and store the result in redis
+  const result = await exec.apply(this, arguments);
+  console.log(result);
 };
