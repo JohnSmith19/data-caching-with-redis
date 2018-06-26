@@ -78,6 +78,8 @@ client.set("color", "red", "EX", 5000 /*number of ms*/);
 client.get("color", console.log); // => null null
 ```
 
+## Data Caching
+
 ### [Project Setup](https://github.com/JohnSmith19/data-caching-with-redis/commit/ec1fc246cb4a200f6fbb3fb4c16906a795c4ac63)
 
 ### [Promisifying a Function](https://github.com/JohnSmith19/data-caching-with-redis/commit/6719fd842421f5eefe80f12f5fc6de63ed327a01)
@@ -126,3 +128,16 @@ mongoose.Query.prototype.exec = function() {
 ### [Clearing Nested Hashes](https://github.com/JohnSmith19/data-caching-with-redis/commit/6db0df9d6315eedc41e5b2a8332d8fd5da669685#diff-853bab5e1a5197366bfd8d750c69e150)
 
 ### [Automated Cache Clearing with Middleware](https://github.com/JohnSmith19/data-caching-with-redis/commit/d05ebeac9ee8d2230a1cdb6b15c364b01fac3e05#diff-4fe3b5b3889c0346f0f7f56a57ab1d34)
+
+## Automated Headless Browser Testing
+
+### Jest
+
+- [About Jest](http://jestjs.io/docs/en/getting-started.html)
+
+### Commands Around Testing
+
+```bash
+$ npm install --save jest
+$ npm run test
+```
