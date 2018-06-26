@@ -103,3 +103,5 @@ client.get("color", console.log); // => null null
 ### [Toggleable Cache]()
 
 ### [Cache Expiration]()
+
+### [Nested Hashes]()
