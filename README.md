@@ -6,12 +6,12 @@ Starting project for a course on Advanced Node @ Udemy
 
 ## Project Setup
 
-## Redis
+### Redis
 
 - [About Redis](https://redis.io/)
 - [redis - node.js redis client](https://www.npmjs.com/package/redis)
 
-### Install Redis on Ubuntu
+#### Install Redis on Ubuntu
 
 ```bash
 $ sudo apt install redis
@@ -21,7 +21,7 @@ $ redis-cli ping
 PONG
 ```
 
-### Getting and Setting Basic Values
+#### Getting and Setting Basic Values
 
 ```js
 const redis = require("redis");
@@ -33,7 +33,7 @@ client.get("hi", (err, value) => console.log(value)); // => 'there'
 client.get("hi", console.log); // => null 'there'
 ```
 
-### Redis Hashes
+#### Redis Hashes
 
 ```js
 // data structure
@@ -60,7 +60,7 @@ client.hset('german', 'blue', 'blau');
 client.hget('german', 'blue', console.log); // => null 'blau'
 ```
 
-### JSON Stringify
+#### JSON Stringify
 
 ```js
 clinet.set("colors", { red: "rojo" });
@@ -72,7 +72,7 @@ client.get("colors", console.log); // => null, '{"red" : "rojo"}'
 client.get("colors", (err, val) => console.log(JSON.parse(val))); // => { red: 'rojo' }
 ```
 
-### Automatic Expiration
+#### Automatic Expiration
 
 ```js
 client.set("color", "red", "EX", 5000 /*number of ms*/);
@@ -80,8 +80,8 @@ client.set("color", "red", "EX", 5000 /*number of ms*/);
 client.get("color", console.log); // => null null
 ```
 
-## [Promisifying a Function](https://github.com/JohnSmith19/data-caching-with-redis/commit/6719fd842421f5eefe80f12f5fc6de63ed327a01)
+### [Promisifying a Function](https://github.com/JohnSmith19/data-caching-with-redis/commit/6719fd842421f5eefe80f12f5fc6de63ed327a01)
 
-## [Caching in Action](https://github.com/JohnSmith19/data-caching-with-redis/commit/bd6c43dff49d3708ce5323184f5dd4591db681d5#diff-853bab5e1a5197366bfd8d750c69e150)
+### [Caching in Action](https://github.com/JohnSmith19/data-caching-with-redis/commit/bd6c43dff49d3708ce5323184f5dd4591db681d5#diff-853bab5e1a5197366bfd8d750c69e150)
 
-## [Patching Mongoose's Exec]
+### [Patching Mongoose's Exec](https://github.com/JohnSmith19/data-caching-with-redis/commit/662d050ed3a5cd0915ecd6c70cee9e94dd533fc4#diff-28fc543f349200516a8ad8a17ffcab9e)
