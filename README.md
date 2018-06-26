@@ -101,3 +101,5 @@ client.get("color", console.log); // => null null
 ### [Hydrating Arrays]()
 
 ### [Toggleable Cache]()
+
+### [Cache Expiration]()
