@@ -33,7 +33,6 @@ module.exports = app => {
 
     // if no, we need to repond to request
     // and update our cache to store the data
-
     const blogs = await Blog.find({ _user: req.user.id });
 
     console.log("SERVING FROM MONGODB");
