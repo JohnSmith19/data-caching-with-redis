@@ -86,6 +86,8 @@ client.get("color", console.log); // => null null
 
 ### [Patching Mongoose's Exec](https://github.com/JohnSmith19/data-caching-with-redis/commit/662d050ed3a5cd0915ecd6c70cee9e94dd533fc4#diff-28fc543f349200516a8ad8a17ffcab9e)
 
-### [Restoring Blog Routes Handler]()
+### [Restoring Blog Routes Handler](https://github.com/JohnSmith19/data-caching-with-redis/commit/93b18731d89469b6739be13a384fb7d6a8aaa0a9)
 
-### [Unique Keys]()
+### [Unique Keys](https://github.com/JohnSmith19/data-caching-with-redis/commit/75812eea778e7ac7485393bd3a5ad77f86f7f179#diff-28fc543f349200516a8ad8a17ffcab9e)
+
+### [Key Creation]()
