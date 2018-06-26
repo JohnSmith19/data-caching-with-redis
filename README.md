@@ -223,3 +223,13 @@ const keys = require("../config/keys");
 const keygrip = new Keygrip([keys.cookieKey]);
 const sig = keygrip.sign("session=" + sessionString);
 ```
+
+### Assembling the Pieces
+
+- [setCookie](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagesetcookiecookies)
+
+```js
+await page.setCookie({ name: "session", value: sessionString });
+await page.setCookie({ name: "session.sig", value: sig });
+await page.goto("localhost:3000");
+```
