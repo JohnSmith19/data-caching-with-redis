@@ -107,3 +107,5 @@ client.get("color", console.log); // => null null
 ### [Nested Hashes]()
 
 ### [Clearing Nested Hashes]()
+
+### [Automated Cache Clearning with Middleware]()
