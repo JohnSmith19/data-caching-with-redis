@@ -135,14 +135,14 @@ mongoose.Query.prototype.exec = function() {
 
 - [About Jest](http://jestjs.io/docs/en/getting-started.html)
 
-- Commands Around Testing
+### Commands Around Testing
 
 ```bash
 $ npm install --save-dev jest
 $ npm run test
 ```
 
-- First Jest Test
+### First Jest Test
 
 ```js
 test("Adds tow numbers", () => {
@@ -165,4 +165,10 @@ test("We can launch a browser", async () => {
   });
   const page = await browser.newPage();
 });
+```
+
+### Chromium Navigation
+
+```js
+await page.goto("localhost:3000");
 ```
