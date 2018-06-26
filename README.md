@@ -181,3 +181,11 @@ expect(text).toEqual("Blogster");
 ```
 
 ### DRY Tests
+
+### Browser Termination
+
+```js
+afterEach(async () => {
+  await browser.close();
+});
+```
