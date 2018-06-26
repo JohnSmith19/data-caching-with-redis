@@ -172,3 +172,10 @@ test("We can launch a browser", async () => {
 ```js
 await page.goto("localhost:3000");
 ```
+
+### Extracting Page Content
+
+```js
+const text = await page.$eval("a.brand-logo", el => el.innerHTML);
+expect(text).toEqual("Blogster");
+```
