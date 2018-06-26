@@ -193,3 +193,11 @@ afterEach(async () => {
 ### Asserting OAuthFlow
 
 - [page.url()](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageurl)
+
+### Asserting URL Domain
+
+- [.toMatch(regexpOrString)](http://jestjs.io/docs/en/expect#tomatchregexporstring)
+
+```js
+expect(url).toMatch(/accounts\.google\.com/);
+```
