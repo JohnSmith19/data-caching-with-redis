@@ -97,3 +97,5 @@ client.get("color", console.log); // => null null
 ### [Resolving Values]()
 
 ### [Hydrating Models]()
+
+### [Hydrating Arrays]()
