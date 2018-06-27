@@ -347,3 +347,5 @@ console.log(allGreetings.english()); // => "Hello"
 ```
 
 ### Combining the Page and Browser
+
+### Custom Page Implementation
