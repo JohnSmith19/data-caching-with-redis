@@ -248,3 +248,13 @@ expect(text).toEqual("Logout");
 ### The Session Factory
 
 ### Assembling the Session Factory
+
+### Global Jest Setup
+
+- [setupTestFrameworkScriptFile](http://jestjs.io/docs/en/configuration.html#setuptestframeworkscriptfile-string)
+
+```js
+"jest": {
+  "setupTestFrameworkScriptFile": "./tests/setup.js"
+},
+```
