@@ -355,3 +355,5 @@ console.log(allGreetings.english()); // => "Hello"
 ### Associate helper functions with page object
 
 ### Reusable Functions on Page
+
+### Testing Blog Creation
