@@ -246,3 +246,5 @@ expect(text).toEqual("Logout");
 ```
 
 ### The Session Factory
+
+### Assembling the Session Factory
