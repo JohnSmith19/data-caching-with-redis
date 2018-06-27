@@ -258,3 +258,5 @@ expect(text).toEqual("Logout");
   "setupTestFrameworkScriptFile": "./tests/setup.js"
 },
 ```
+
+### Testing Factory Tests!
