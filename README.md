@@ -308,3 +308,40 @@ const customPage = new CustomPage(page);
 customPage.login();
 customPage.page.goto(...); // namespace variable problem...
 ```
+
+### Proxies in Action
+
+- [About Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
+
+```js
+class Greetings {
+  english() {
+    return "Hello";
+  }
+  spanish() {
+    return "Hola";
+  }
+}
+
+class MoreGreetings {
+  german() {
+    return "Hallo";
+  }
+  frech() {
+    return "Bonjour";
+  }
+}
+
+const greetings = new Greetings();
+const moreGreetings = new MoreGreetings();
+
+const allGreetings = new Proxy(moreGreetings, {
+  get: function(target, property) {
+    return target[property] || greetings[property];
+  }
+});
+
+console.log(allGreetings.german); // => german() { retrun "Hallo"; }
+console.log(allGreetings.german()); // => "Hallo"
+console.log(allGreetings.english()); // => "Hello"
+```
