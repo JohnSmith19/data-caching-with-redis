@@ -266,7 +266,7 @@ expect(text).toEqual("Logout");
 - [puppeteer/lib/Page](https://github.com/GoogleChrome/puppeteer/blob/master/lib/Page.js)
 
 ```js
-// Option: Add login method in puppeteer Page Object
+// Option 1: Add login method in puppeteer Page Object
 const Page = require("puppeteer/lib/Page");
 
 Page.prototype.login = async function() {
@@ -278,4 +278,33 @@ Page.prototype.login = async function() {
   await this.goto("localhost:3000");
   await this.waitFor('a[href="/auth/logout"]');
 };
+```
+
+### Extending Page
+
+```js
+// Option 2: Extends Page Object
+// We can not easily tell puppeteer that whenever we use a browser
+// object to launch a new page.
+class CustomPage extends Page {
+  login() {
+    ...
+  }
+}
+
+// Options 3
+class CustomPage {
+  constructor(page) {
+    this.page = page;
+  }
+
+  login() {
+    ...
+  }
+}
+
+const page = new Page();
+const customPage = new CustomPage(page);
+customPage.login();
+customPage.page.goto(...); // namespace variable problem...
 ```
