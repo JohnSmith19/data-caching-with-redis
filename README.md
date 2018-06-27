@@ -145,7 +145,7 @@ $ npm run test
 ### First Jest Test
 
 ```js
-test("Adds tow numbers", () => {
+test("Adds two numbers", () => {
   const sum = 1 + 2;
 
   expect(sum).toEqual(3);
@@ -244,3 +244,5 @@ const text = await page.$eval('a[href="/auth/logout"]', el => el.innerHTML);
 
 expect(text).toEqual("Logout");
 ```
+
+### The Session Factory
