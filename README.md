@@ -361,3 +361,7 @@ console.log(allGreetings.english()); // => "Hello"
 ### Default Navigation
 
 ### Asserting Form Display
+
+### Test Timeout
+
+- [Jest setTimeout](http://jestjs.io/docs/es-ES/jest-object#jestsettimeouttimeout)
