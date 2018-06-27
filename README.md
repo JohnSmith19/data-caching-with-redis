@@ -365,3 +365,7 @@ console.log(allGreetings.english()); // => "Hello"
 ### Test Timeout
 
 - [Jest setTimeout](http://jestjs.io/docs/es-ES/jest-object#jestsettimeouttimeout)
+
+```js
+jest.setTimeout(30000);
+```
