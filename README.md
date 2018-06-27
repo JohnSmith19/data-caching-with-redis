@@ -353,3 +353,5 @@ console.log(allGreetings.english()); // => "Hello"
 ### Function Lookup Priority
 
 ### Associate helper functions with page object
+
+### Reusable Functions on Page
