@@ -345,3 +345,5 @@ console.log(allGreetings.german); // => german() { retrun "Hallo"; }
 console.log(allGreetings.german()); // => "Hallo"
 console.log(allGreetings.english()); // => "Hello"
 ```
+
+### Combining the Page and Browser
