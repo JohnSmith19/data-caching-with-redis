@@ -260,3 +260,22 @@ expect(text).toEqual("Logout");
 ```
 
 ### Testing Factory Tests!
+
+### Adding a Login Method
+
+- [puppeteer/lib/Page](https://github.com/GoogleChrome/puppeteer/blob/master/lib/Page.js)
+
+```js
+// Option: Add login method in puppeteer Page Object
+const Page = require("puppeteer/lib/Page");
+
+Page.prototype.login = async function() {
+  const user = await userFactory();
+  const { session, sig } = sessionFactory(user);
+
+  await this.setCookie({ name: "session", value: session });
+  await this.setCookie({ name: "session.sig", value: sig });
+  await this.goto("localhost:3000");
+  await this.waitFor('a[href="/auth/logout"]');
+};
+```
