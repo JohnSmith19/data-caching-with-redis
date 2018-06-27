@@ -357,3 +357,5 @@ console.log(allGreetings.english()); // => "Hello"
 ### Reusable Functions on Page
 
 ### Testing Blog Creation
+
+### Default Navigation
