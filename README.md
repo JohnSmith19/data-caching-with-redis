@@ -467,3 +467,15 @@ console.log(result); // prints "56"
 ```
 
 ### Asserting Page Response
+
+### Get Restrictions
+
+```js
+fetch("/api/blogs", {
+  method: "GET",
+  credentials: "same-origin",
+  headers: {
+    "Content-Type": "application/json"
+  }
+});
+```
