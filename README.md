@@ -369,3 +369,22 @@ console.log(allGreetings.english()); // => "Hello"
 ```js
 jest.setTimeout(30000);
 ```
+
+### Nested Describes for Structure
+
+- [describe](http://jestjs.io/docs/en/api.html#describename-fn)
+
+```js
+describe("When logged in", async () => {
+  beforeEach(async () => {
+    await page.login();
+    await page.click("a.btn-floating");
+  });
+
+  test("can see blog create form", async () => {
+    const label = await page.getContentsOf("form label");
+
+    expect(label).toEqual("Blog Title");
+  });
+});
+```
