@@ -481,3 +481,15 @@ fetch("/api/blogs", {
 ```
 
 ### A Final 'GET' Test
+
+### Advanced Test Helpers
+
+```js
+execRequests(actions) {
+  return Promise.all(
+    actions.map(({ method, path, data }) => {
+      return this[method](path, data);
+    })
+  );
+}
+```
