@@ -479,3 +479,5 @@ fetch("/api/blogs", {
   }
 });
 ```
+
+### A Final 'GET' Test
