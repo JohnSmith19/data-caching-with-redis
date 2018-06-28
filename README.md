@@ -406,3 +406,21 @@ describe("And using invalid inputs", async () => {
   });
 });
 ```
+
+### Asserting Form Confirmation
+
+```js
+describe("And using valid inputs", () => {
+  beforeEach(async () => {
+    await page.type(".title input", "My Title");
+    await page.type(".content input", "My Content");
+    await page.click("form button");
+  });
+
+  test("Submitting takes user to review screen", async () => {
+    const text = await page.getContentsOf("h5");
+
+    expect(text).toEqual("Please confirm your entries");
+  });
+});
+```
