@@ -465,3 +465,5 @@ const result = await page.evaluate(x => {
 }, 7);
 console.log(result); // prints "56"
 ```
+
+### Asserting Page Response
