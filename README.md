@@ -439,3 +439,18 @@ test("Submitting then saving adds blog to index page", async () => {
   expect(content).toEqual("My Content");
 });
 ```
+
+### Direct API Requests
+
+- [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+
+```js
+fetch("/api/blogs", {
+  method: "POST",
+  credentials: "same-origin",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({ title: "My Title", content: "My Content" })
+});
+```
