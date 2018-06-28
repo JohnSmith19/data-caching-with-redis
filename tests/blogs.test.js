@@ -62,3 +62,4 @@ describe("When logged in", async () => {
     });
   });
 });
+

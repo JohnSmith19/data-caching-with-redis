@@ -454,3 +454,14 @@ fetch("/api/blogs", {
   body: JSON.stringify({ title: "My Title", content: "My Content" })
 });
 ```
+
+### Excuted Arbitrary JS in Chromium
+
+- [page.evaluate](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageevaluatepagefunction-args)
+
+```js
+const result = await page.evaluate(x => {
+  return Promise.resolve(8 * x);
+}, 7);
+console.log(result); // prints "56"
+```
