@@ -545,3 +545,13 @@ if (["production", "ci"].includes(process.env.NODE_ENV)) {
   });
 }
 ```
+
+### More Configuration
+
+```js
+const browser = await puppeteer.launch({
+  headless: true,
+  args: ["--no-sandbox"]
+});
+await page.goto("http://localhost:3000");
+```
