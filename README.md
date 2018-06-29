@@ -493,3 +493,36 @@ execRequests(actions) {
   );
 }
 ```
+
+## Continuous Intergration
+
+### Travis
+
+- [About Travis](https://docs.travis-ci.com/user/getting-started)
+
+### Travis YAML Setup
+
+- .travis.yml
+
+```ymnl
+language: node_js
+node_js:
+  - "8"
+dist: trusty
+services:
+  - mongodb
+  - redis-server
+env:
+  - NODE_ENV=ci
+cache:
+  directories:
+    - node_modules
+    - client/node_modules
+install:
+  - npm install
+  - npm run build
+script:
+  - nohup npm run start &
+  - sleep 3
+  - npm run test
+```
