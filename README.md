@@ -1,8 +1,12 @@
-# Data Caching with Redis
+# Node.js Advanced Concept
+
+Node.js Advanced Concept - Data Caching, Automated Testing, Continuous Intergration
 
 This project was bootstrapped with [AdvancedNodeStarter](https://github.com/StephenGrider/AdvancedNodeStarter)
 
 Starting project for a course on Advanced Node @ Udemy
+
+## Data Caching with Redis
 
 ### Redis
 
