@@ -513,7 +513,7 @@ services:
   - mongodb
   - redis-server
 env:
-  - NODE_ENV=ci
+  - NODE_ENV=ci PORT=3000
 cache:
   directories:
     - node_modules
@@ -525,4 +525,23 @@ script:
   - nohup npm run start &
   - sleep 3
   - npm run test
+```
+
+### Travis Documentation
+
+- [Setting up Database](https://docs.travis-ci.com/user/database-setup/)
+- [MONGODB](https://docs.travis-ci.com/user/database-setup/#MongoDB)
+- [REDIS](https://docs.travis-ci.com/user/database-setup/#Redis)
+
+### Server Configuration for CI
+
+```js
+if (["production", "ci"].includes(process.env.NODE_ENV)) {
+  app.use(express.static("client/build"));
+
+  const path = require("path");
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve("client", "build", "index.html"));
+  });
+}
 ```
