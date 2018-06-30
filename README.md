@@ -636,3 +636,13 @@ app.get("/api/upload", requireLogin, (req, res) => {
   );
 });
 ```
+
+### Test SignedURL
+
+```http
+http://localhost:5000/api/upload
+{
+key: "5b30cff5ca04f30570b2.../56692720-7c06-11e8-90c1-e553b9e8d9b7.jpeg",
+url: "https://bl...s3.amazonaws.com/5b30cff5ca04f.../56692720-7c06-11e8-90c1-e553b9e8d9b7.jpeg?AWSAccessKeyId=AKIAJ42JCBL...&Content-Type=jpeg&Expires=1530323629&Signature=dFo7cMgaOoihDM..."
+}
+```
