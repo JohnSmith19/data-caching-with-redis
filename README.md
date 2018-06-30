@@ -592,3 +592,24 @@ onFileChange(event) {
 ```
 
 ### Recording Image Files
+
+### Upload Routes Files
+
+```js
+module.exports = app => {
+  app.get("/api/upload", (req, res) => {});
+};
+```
+
+### Configuring the AWS SDK
+
+```bash
+$ npm install --save aws-sdk
+```
+
+```js
+const s3 = new AWS.S3({
+  accessKeyId: keys.accessKeyId,
+  secretAccessKey: keys.secretAccessKey
+});
+```
