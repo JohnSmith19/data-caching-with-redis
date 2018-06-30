@@ -613,3 +613,26 @@ const s3 = new AWS.S3({
   secretAccessKey: keys.secretAccessKey
 });
 ```
+
+### GetSignedURL
+
+- [getSignedUrl](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#getSignedUrl-property)
+- [uuid](https://www.npmjs.com/package/uuid)
+
+```js
+const uuid = require("uuid/v1");
+
+app.get("/api/upload", requireLogin, (req, res) => {
+  const key = `${req.user.id}/${uuid()}.jpeg`;
+
+  s3.getSignedUrl(
+    "putObject",
+    {
+      Bucket: "bloster",
+      ContentType: "jpeg",
+      Key: key
+    },
+    (err, url) => res.send({ key, url })
+  );
+});
+```
