@@ -565,6 +565,16 @@ await page.goto("http://localhost:3000");
 ### AWS S3
 
 - [About S3](https://aws.amazon.com/ko/s3/)
+- [Create S3 Bucket](https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/user-guide/create-configure-bucket.html)
+
+### AWS Credentials with IAM
+
+- [IAM](https://aws.amazon.com/ko/iam/)
+- [IAM Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
+
+### Allowing Actions with IAM Policies
+
+### Creating IAM Users
 
 ### Adding an Image Picker
 
