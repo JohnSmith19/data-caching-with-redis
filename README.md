@@ -701,3 +701,12 @@ await axios.put(uploadConfig.data.url, file, {
   ]
 }
 ```
+
+### Uploads to Blogs
+
+```js
+const res = await axios.post("/api/blogs", {
+  ...values,
+  imageUrl: uploadConfig.data.key
+});
+```
