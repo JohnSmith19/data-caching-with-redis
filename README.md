@@ -559,3 +559,11 @@ const browser = await puppeteer.launch({
 });
 await page.goto("http://localhost:3000");
 ```
+
+## Scalable Image/File Upload
+
+### AWS S3
+
+- [About S3](https://aws.amazon.com/ko/s3/)
+
+### Adding an Image Picker
