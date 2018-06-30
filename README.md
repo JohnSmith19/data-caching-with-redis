@@ -580,3 +580,5 @@ onFileChange(event) {
   console.log(event.target.files);
 }
 ```
+
+### Recording Image Files
