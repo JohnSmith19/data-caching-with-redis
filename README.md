@@ -567,3 +567,16 @@ await page.goto("http://localhost:3000");
 - [About S3](https://aws.amazon.com/ko/s3/)
 
 ### Adding an Image Picker
+
+```js
+<input type="file" accept="image/*" onChange={this.onFileChange.bind(this)} />
+```
+
+### Handling File Changes
+
+```js
+onFileChange(event) {
+  this.setState({ file: event.target.files });
+  console.log(event.target.files);
+}
+```
