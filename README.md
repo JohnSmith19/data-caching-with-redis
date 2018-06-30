@@ -681,3 +681,23 @@ await axios.put(uploadConfig.data.url, file, {
 	</CORSRule>
 </CORSConfiguration>
 ```
+
+### S3 Bucket Policies
+
+```xml
+{
+  "Id": "Policy1530324525300",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1530324522860",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::bl.../*",
+      "Principal": "*"
+    }
+  ]
+}
+```
