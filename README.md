@@ -710,3 +710,5 @@ const res = await axios.post("/api/blogs", {
   imageUrl: uploadConfig.data.key
 });
 ```
+
+### Displaying Images
