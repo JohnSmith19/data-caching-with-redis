@@ -658,3 +658,26 @@ await axios.put(uploadConfig.data.url, file, {
   }
 });
 ```
+
+### Handling CORS Errors
+
+- [S3 CORS](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html)
+
+```xml
+<!-- Sample policy -->
+<CORSConfiguration>
+	<CORSRule>
+		<AllowedOrigin>*</AllowedOrigin>
+		<AllowedMethod>GET</AllowedMethod>
+		<MaxAgeSeconds>3000</MaxAgeSeconds>
+		<AllowedHeader>Authorization</AllowedHeader>
+	</CORSRule>
+
+	<CORSRule>
+		<AllowedOrigin>http://localhost:3000</AllowedOrigin>
+		<AllowedMethod>PUT</AllowedMethod>
+		<MaxAgeSeconds>3000</MaxAgeSeconds>
+		<AllowedHeader>*</AllowedHeader>
+	</CORSRule>
+</CORSConfiguration>
+```
